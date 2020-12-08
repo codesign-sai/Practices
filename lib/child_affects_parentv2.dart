@@ -62,6 +62,8 @@ class _ChildAffectsParentV2State extends State<ChildAffectsParentV2> {
                 ))));
   }
 
+  
+
   newIconSize(double newis) {
     newis = originalIconSize * 1.5;
     return newis;
