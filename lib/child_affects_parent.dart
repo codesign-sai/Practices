@@ -24,16 +24,22 @@ class _ChildAffectsParentState extends State<ChildAffectsParent> {
                 height: 400,
                 width: 200,
                 color: randomColor(),
-                child: IconButton(
-                  iconSize: 50,
-                  alignment: Alignment.center,
-                  icon: Icon(Icons.favorite),
-                  onPressed: () {
-                    setState(() {
-                      randomColor();
-                    });
-                  },
-                ))),
+                child: Container(
+                    alignment: Alignment.center,
+                    // width: 100,
+                    // height: 100,
+                    // color: Colors.blue,
+                    child: IconButton(
+                      visualDensity: VisualDensity.compact,
+                      iconSize: 50,
+                      alignment: Alignment.center,
+                      icon: Icon(Icons.favorite),
+                      onPressed: () {
+                        setState(() {
+                          randomColor();
+                        });
+                      },
+                    )))),
       ),
     );
   }

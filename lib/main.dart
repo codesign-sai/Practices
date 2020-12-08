@@ -4,12 +4,17 @@ import 'package:helloworld/amount_selector.dart';
 import 'package:helloworld/change_container_size.dart';
 import 'package:helloworld/child_affects_parent.dart';
 import 'package:helloworld/child_affects_parentv2.dart';
+import 'package:helloworld/date_selector.dart';
 //import 'package:helloworld/place_cards.dart';
 //import 'package:helloworld/paint_icon.dart';
 //import 'package:helloworld/scrollable_screen.dart';
 //import 'package:helloworld/split_the_screen.dart';
 //import 'package:helloworld/date_selector.dart';
 import 'package:helloworld/display_sheet.dart';
+import 'package:helloworld/paint_icon.dart';
+import 'package:helloworld/place_cards.dart';
+import 'package:helloworld/scrollable_screen.dart';
+import 'package:helloworld/split_the_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -28,10 +33,10 @@ class MyApp extends StatelessWidget {
         //home: new PaintBackground());
         //home: new PaintIcon());
         //home: new ScrollableScreen());
-        //home: new SplitTheScreen());
+        // home: new SplitTheScreen());
         //home: new PlaceCards());
         //home: new DataSelector());
-        //home: new AmountSelector());
+        // home: new AmountSelector());
         //home: new DisplaySheet());
         //home: new ChangeContainerSize());
         //home: new ChildAffectsParent());

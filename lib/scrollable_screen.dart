@@ -23,18 +23,7 @@ class ScrollableScreen1 extends StatelessWidget {
 
 class ScrollableScreen extends StatelessWidget {
   final title = 'Long List';
-  final List<String> entries = <String>[
-    ' ',
-    ' ',
-    ' ',
-    ' ',
-    ' ',
-    ' ',
-    ' ',
-    ' ',
-    ' ',
-    ' ',
-  ];
+
   final List<int> colorCodes = <int>[
     800,
     500,
@@ -57,12 +46,12 @@ class ScrollableScreen extends StatelessWidget {
       home: new Scaffold(
         body: ListView.builder(
             //padding: const EdgeInsets.all(8),
-            itemCount: entries.length,
+            itemCount: colorCodes.length,
             itemBuilder: (BuildContext context, int index) {
               return Container(
                 height: 150,
                 color: Colors.amber[colorCodes[index]],
-                child: Center(child: Text(' ${entries[index]}')),
+                child: Container(),
               );
             }),
       ),

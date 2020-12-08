@@ -63,7 +63,7 @@ class _DisplaySheetState extends State<DisplaySheet> {
   String code = 'AUD';
   @override
   Widget build(BuildContext context) {
-    FocusScope.of(context).requestFocus(new FocusNode());
+    //FocusScope.of(context).requestFocus(new FocusNode());
     return Scaffold(
         body: Container(
             height: 450.0,
