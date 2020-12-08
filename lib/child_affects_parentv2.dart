@@ -27,23 +27,58 @@ class _ChildAffectsParentV2State extends State<ChildAffectsParentV2> {
     Icons.fact_check
   ];
   final double originalIconSize = 40;
-
+  bool _bigger = false;
+  IconData updateIcon = Icons.add;
   @override
   Widget build(BuildContext context) {
-    return Container(
-        color: Colors.white,
-        padding: EdgeInsets.fromLTRB(0, 300, 0, 300),
-        child: ListView.builder(
-            scrollDirection: Axis.horizontal,
-            itemCount: 15,
-            itemBuilder: buildItem));
+    return Scaffold(
+        body: new Column(
+      mainAxisAlignment: MainAxisAlignment.end,
+      children: [
+        Container(
+            height: 130,
+            color: Colors.white,
+            //padding: EdgeInsets.fromLTRB(0, 300, 0, 300),
+            child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: 15,
+                itemBuilder: buildItem)),
+        Container(
+            height: 300,
+            child: _bigger
+                ? Container()
+                : Container(
+                    alignment: Alignment.center,
+                    //color: Colors.yellow[600],
+                    child: Container(
+                        margin: EdgeInsets.all(10),
+                        padding: EdgeInsets.all(5),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(100),
+                            color: Colors.black,
+                            border: Border.all(width: 2)),
+                        child: Container(
+                            width: 80,
+                            height: 80,
+                            child: Icon(
+                              //Icons.add,
+                              updateIcon,
+                              //size: originalIconSize,
+                              //size: _bigger ? 40 : 40 * 1.5,
+                              size: 60,
+                              color: Colors.white,
+                            )))))
+      ],
+    ));
   }
 
   Widget buildItem(BuildContext context, int index) {
     IconData newsItem = iconItems[index];
     return GestureDetector(
         onTap: () {
-          setState(() {});
+          setState(() {
+            onItemClick(index);
+          });
         },
         child: Container(
             alignment: Alignment.center,
@@ -55,17 +90,22 @@ class _ChildAffectsParentV2State extends State<ChildAffectsParentV2> {
                     borderRadius: BorderRadius.circular(100),
                     color: Colors.black,
                     border: Border.all(width: 2)),
-                child: Icon(
-                  newsItem,
-                  size: originalIconSize,
-                  color: Colors.white,
-                ))));
+                child: AnimatedContainer(
+                    duration: Duration(seconds: 1),
+                    width: _bigger ? 40 : 40 * 1.5,
+                    height: _bigger ? 40 : 40 * 1.5,
+                    child: Icon(
+                      newsItem,
+                      //size: originalIconSize,
+                      //size: _bigger ? 40 : 40 * 1.5,
+                      size: 40,
+                      color: Colors.white,
+                    )))));
   }
 
-  
-
-  newIconSize(double newis) {
-    newis = originalIconSize * 1.5;
-    return newis;
+  onItemClick(int index) {
+    _bigger = !_bigger;
+    print('this is ' + '$index' + ' item');
+    updateIcon = iconItems[index];
   }
 }
